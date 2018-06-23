@@ -19,7 +19,7 @@ import numpy as np
 from numpy import (
     array, arange, empty, zeros, int32, int64, uint16, complex_, float64, rec,
     copy, ones_like, where, alltrue, linspace,
-    sum, prod, sqrt, fmod, floor, ceil,
+    sum, prod, sqrt, fmod, floor, ceil, round,
     sin, cos, tan, arcsin, arccos, arctan, arctan2,
     sinh, cosh, tanh, arcsinh, arccosh, arctanh,
     log, log1p, log10, exp, expm1, conj)
@@ -534,7 +534,7 @@ for func in ['copy', 'ones_like', 'sqrt',
              'sin', 'cos', 'tan', 'arcsin', 'arccos', 'arctan',
              'sinh', 'cosh', 'tanh', 'arcsinh', 'arccosh', 'arctanh',
              'log', 'log1p', 'log10', 'exp', 'expm1', 'abs', 'conj',
-             'ceil', 'floor']:
+             'ceil', 'floor', 'round']:
     func1tests.append("a + %s(b+c)" % func)
 tests.append(('1_ARG_FUNCS', func1tests))
 
@@ -672,7 +672,7 @@ def test_expressions():
                         if (dtype == complex and
                             ('<' in expr or '>' in expr or '%' in expr
                              or "arctan2" in expr or "fmod" in expr
-                             or "floor" in expr or "ceil" in expr)):
+                             or "floor" in expr or "ceil" in expr or "round" in expr)):
                             # skip complex comparisons or functions not
                             # defined in complex domain.
                             continue
