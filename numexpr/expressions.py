@@ -374,6 +374,7 @@ functions = {
     'abs': func(numpy.absolute, 'float'),
     'ceil': func(numpy.ceil, 'float', 'double'),
     'floor': func(numpy.floor, 'float', 'double'),
+    'round': func(numpy.round, 'float', 'double'),
 
     'where': where_func,
 
